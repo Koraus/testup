@@ -7,7 +7,7 @@
       </label>
       <label for="password">
         <span class="login-form__label"> Password</span>
-        <input class="login-form__input" type="password"  v-model="password"/>
+        <input class="login-form__input" type="password"  v-model="password" @keydown.enter="authorization()"/>
       </label>
       <button class="login-form__btn" @click="authorization()">LOGIN</button>
             <div>
@@ -35,9 +35,6 @@ export default {
 
   },
   emits: {
-      login(){
-
-      }
   },
 
   methods: {

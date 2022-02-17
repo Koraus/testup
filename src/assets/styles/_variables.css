@@ -1,7 +1,8 @@
 :root {
 --color_HF:  #333333;
 --liniar_gr: linear-gradient(180deg, #00A9E7, #005B9F);
---color_btn: #0076C0;
+/* --color_btn: #0076C0; */
+--color_btn: rgb( 0, 118, 192);
 --color_error: #D60000;
 --color_white_text: #FFFFFF;
 
