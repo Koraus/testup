@@ -2,51 +2,54 @@
   <div>
     <div class="login-form">
       <label for="name">
-        <span class="login-form__label"> Name {{username}}</span>
-        <input class="login-form__input" type="text"  v-model="username" >
+        <span class="login-form__label"> Name {{ username }}</span>
+        <input class="login-form__input" type="text" v-model="username" />
       </label>
       <label for="password">
         <span class="login-form__label"> Password</span>
-        <input class="login-form__input" type="password"  v-model="password" @keydown.enter="authorization()"/>
+        <input
+          class="login-form__input"
+          placeholder="Enter you task"
+          type="password"
+          v-model="password"
+          @keydown.enter="authorization()"
+        />
       </label>
       <button class="login-form__btn" @click="authorization()">LOGIN</button>
-            <div>
+      <div>
         <a href="" class="login-form__forgot-link"> Forgot Password</a>
-         </div>
-          <button class="login-form__register-btn" >Register now</button>
+      </div>
+      <button class="login-form__register-btn">Register now</button>
     </div>
   </div>
 </template>
 
 <script>
 export default {
-  
   name: "LoginForm",
 
   data() {
     return {
-        password : '',
-        username : '',
-        registeredUsers : {user: 'admin', password: '12345'},
+      password: "",
+      username: "",
+      registeredUsers: { user: "admin", password: "12345" },
     };
   },
-  props: {
-
-
-  },
-  emits: {
-  },
+  props: {},
+  emits: {},
 
   methods: {
-      authorization () {
-          if (this.password === this.registeredUsers.password && this.username === this.registeredUsers.user )
-          {
-            this.$router.push('Todo')
-            localStorage.isAuthorized = true;
-            localStorage.username = this.username;
-
-          }  this.$router.push('Todo')
+    authorization() {
+      if (
+        this.password === this.registeredUsers.password &&
+        this.username === this.registeredUsers.user
+      ) {
+        this.$router.push("Todo");
+        localStorage.isAuthorized = true;
+        localStorage.username = this.username;
       }
+      this.$router.push("Todo");
+    },
   },
 };
 </script>
@@ -79,7 +82,7 @@ export default {
     margin-bottom: 40px;
     border: 1px solid #9a9a9a;
     color: #333333;
-    padding-top:16px ;
+    padding-top: 16px;
     padding-bottom: 16px;
     padding-right: 15px;
     padding-left: 15px;
@@ -99,11 +102,10 @@ export default {
     font-size: 25px;
     margin-bottom: 20px;
   }
-  &__btn:hover{
+  &__btn:hover {
     background: var(--color_white_text);
     color: var(--color_btn);
     border: 2px solid var(--color_btn);
-
   }
 
   &__forgot-link {
@@ -116,7 +118,7 @@ export default {
 
   &__register-btn {
     position: absolute;
-    bottom:0;
+    bottom: 0;
     left: 0;
     border: none;
     background: #f6f6f6;
@@ -128,8 +130,27 @@ export default {
     color: var(--color_HF);
     padding-bottom: 17px;
     padding-top: 17px;
-    
-  
+  }
+}
+@media (max-width: 574px) {
+  .login-form {
+    padding-top: 20px;
+    padding-left: 30px;
+    padding-right: 30px;
+    width: 380px;
+    height: 464px;
+  }
+}
+@media (max-width: 478px) {
+  .login-form {
+    padding-top: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+    width: 320px;
+    height: 464px;
   }
 }
 </style>
+
+
+

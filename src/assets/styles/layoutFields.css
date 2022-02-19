@@ -1,0 +1,29 @@
+
+._container{
+    padding-left: 374px;
+    padding-right: 374px;
+}
+@media (max-width: 1800px){
+    ._container{
+        padding-left: 200px;
+        padding-right: 200px;
+    }
+}
+@media (max-width: 1400px){
+._container{
+    padding-left: 150px;
+    padding-right: 150px;
+}
+}
+@media (max-width: 1000px){
+    ._container{
+        padding-left: 100px;
+        padding-right: 100px;
+    }
+}
+@media (max-width: 700px){
+    ._container{
+        padding-left: 50px;
+        padding-right: 50px;
+    }
+}

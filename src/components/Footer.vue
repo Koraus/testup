@@ -23,10 +23,8 @@
 .footer  {
     box-sizing: border-box;
     background: var(--color_HF) ;
-    width: 1920px;
-    height: 175px;
-    padding-left:374px ;
-    padding-right:374px ;
+    width: 100%;
+    min-height: 175px;
     display: flex;
     flex-direction: column;
     color: var(--color_white_text);
@@ -64,6 +62,19 @@
        text-align: left;
      }
 
+@media (max-width: 801px){
+.footer {
+  &__top{
+    flex-direction: column;
+  }
+  &__list-items{
+     flex-direction: column;
+     font-size: 24px;
+     line-height: 157%;
+     
+  }
+}
+}
 
 }
 

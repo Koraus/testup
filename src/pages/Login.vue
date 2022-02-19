@@ -5,7 +5,7 @@
     <section class="login">
       <div class="login__top"></div>
 
-      <div class="login__bottom">
+      <div class="login__bottom _container">
         <div class="login__bottom-left">
           <h1 class="login__title">Welcome to <br> Business Analytics Online</h1>
           <p class="login__paragraph">
@@ -40,11 +40,11 @@
             </li>
           </ul>
         </div>
-        <div class="login__bottom-right"><LoginForm  class="login-form-p" /></div>
+        <div class="login__bottom-right"> <LoginForm  class="login-form-p" /></div>
       </div>
     </section>
 
-    <Footer />
+    <Footer class="_container" />
   </div>
 </template>
 <script>
@@ -72,11 +72,14 @@ export default {
   box-sizing: border-box;
 
   &__top {
-    background: no-repeat url("../assets/img/login-bg.png");
+    background:  url("../assets/img/login-bg.png")  no-repeat;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     width: 100%;
     padding-top: 457px;
-    padding-left: 374px;
-    padding-right: 374px;
+
   }
   &__title {
     text-align: left;
@@ -90,9 +93,7 @@ export default {
     display: flex;
     align-items: center;
     box-sizing: border-box;
-    padding-right: 374px;
     padding-bottom: 40px;
-    padding-left: 374px;
     margin-top: -270px;
   }
   &__bottom-left {
@@ -136,5 +137,38 @@ export default {
   .login-form-p {
     margin-left: 16px;
   }
+
+
+@media (max-width: 1400px) {
+  .login {
+      &__bottom{
+          flex-direction: column;
+      }
+      &__bottom-left{
+          margin-bottom: 20px;
+      }
+  }
+  }
+@media (max-width: 801px){
+    .login {
+        &__bottom{
+            margin-top: -390px;
+        }
+        &__title{
+            margin-bottom: 10px;
+        }
+        &__bottom-left{
+            width: 400px;
+        }
+        &__paragraph{
+             width: 400px;
+        }
+    }
+}
+@media (max-width: 478px) {
+  .login__top {
+    padding-top: 370px;
+  }
+}
 }
 </style>

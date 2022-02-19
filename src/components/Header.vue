@@ -1,7 +1,7 @@
 <template>
 <div class="header">
-   <div class="header__top"></div>
-    <div class="header__bottom">
+   <div class="header__top "></div>
+    <div class="header__bottom _container">
      <img class="header__logo" src="../assets/img/logo-header.svg" alt="">
 
   </div>
@@ -18,8 +18,6 @@
     background: var(--color_HF) ;
     width: 100%;
     height: 53px;
-    padding-left: 374px;
-    padding-right: 374px;
     box-sizing: border-box;
     }
     &__bottom{
@@ -29,8 +27,6 @@
     padding-bottom: 15px;
     width: 100%;
     display: flex;
-    padding-left: 374px;
-    padding-right: 374px;
     
     }
     &__logo{

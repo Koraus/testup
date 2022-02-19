@@ -19,6 +19,8 @@
 <style lang="scss">
 
 @import './assets/styles/_variables.css';
+@import './assets/styles/layoutFields.css';
+
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&display=swap');
 // font-family: 'Montserrat', sans-serif;
