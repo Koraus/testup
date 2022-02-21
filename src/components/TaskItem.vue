@@ -64,7 +64,7 @@ export default {
     clearTimeout(this.timeout);  
   this.timeout = setTimeout(() => {
      this.addEmptyTask()
-  }, 600); // delay
+  }, 1000); // delay
 }
     
   },
