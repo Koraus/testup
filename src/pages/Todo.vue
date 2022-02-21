@@ -1,29 +1,12 @@
 <template>
-  <div class="todolist">
-    <div v-if="isAuthorized === undefined"><p>NotAuthorize</p>  <router-link to="/login">Login</router-link>  </div>
+  <div class="todolist"> 
+    <div v-if="isAuthorized === undefined" class="not-authorized-text"><p>You are not authorized. Use the authorization link:</p>  <router-link :to="{ name: 'Login', hash:'#loginForm' }" > Login </router-link>  </div>
 
     <div v-if="isAuthorized === 'true'" >
       <div class="todolist__top">
         <img class="todolist__logo" src="../assets/img/logo-todo.svg" alt="" />
         <div class="todolist__list-area">
           <h1 class="todolist__title">Thank you {{ username }} !</h1>
-          <label for="newTask" class="todolist__">
-            <!-- <input
-            
-              class="todolist__newTaskInput"
-              type="text"
-              v-model="newTask"
-              @keydown.enter="addTask()"
-            />
-            <button class="btn" @click="addTask()">add task</button> -->
-          </label>
-          <!-- <input
-              class="todolist__newTaskInput"
-              type="text"
-              v-model="newTask"
-              @keydown="addTask()"
-              placeholder="Enter you task"
-            /> -->
 
           <ul class="todolist__taskList">
             <TaskItem
@@ -90,7 +73,7 @@ export default {
 
     addEmptyTask () { 
        
-        if( this.tasks[ this.tasks.length - 1 ] !== undefined && this.tasks[ this.tasks.length - 1 ].task !== '' ){ console.log('sss'), this.addTask()}
+        if( this.tasks[ this.tasks.length - 1 ] !== undefined && this.tasks[ this.tasks.length - 1 ].task !== '' ){this.addTask()}
     },
     
     },
@@ -106,9 +89,15 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.not-authorized-text{
+    text-align: center;
+    font-size: 18px;
+     font-family: "Roboto", sans-serif;
+    font-weight: 400;
+}
 .todolist {
     width: 100%;
-   
+
 
   &__top {
     min-height: 800px;
@@ -127,7 +116,7 @@ export default {
 
   }
   &__list-area {
-    width: 80%;
+    width: 85%;
     background: white;
     min-height: 650px;
     margin-bottom: -100px;

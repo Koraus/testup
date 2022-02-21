@@ -103,7 +103,7 @@ export default {
   font-size: 14px;
   align-self: center;
   padding-top: 5px;
-  /* resize: none; */
+  resize: none;
 }
 
 input[type="checkbox"]:checked ~ span,
@@ -158,8 +158,6 @@ hr {
   box-sizing: border-box;
 }
 .task__text-lable input[type="checkbox"] + .spn-replace-checkbox {
-  /* position: absolute; */
-  /* top: ; */
   left: 0px;
   border: 1px rgba(0, 118, 192, 0.2) solid;
   max-height: 25px;

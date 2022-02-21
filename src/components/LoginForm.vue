@@ -1,19 +1,24 @@
 <template>
-  <div>
+  <div id="loginForm">
     <div class="login-form">
-      <label for="name">
-        <span class="login-form__label"> Name {{ username }}</span>
+      <label for="name" class="login-form__label">
+        <span class="login-form__label-text"> Name </span>
         <input class="login-form__input" type="text" v-model="username" />
+        <span class="login-form__error" v-if="username === '' " > Enter name </span>
       </label>
-      <label for="password">
-        <span class="login-form__label"> Password</span>
+      <label for="password" class="login-form__label">
+        <span class="login-form__label-text" > Password</span>
         <input
           class="login-form__input"
-          placeholder="Enter you task"
+          placeholder="Enter you password"
           type="password"
           v-model="password"
           @keydown.enter="authorization()"
+          
         />
+         <span class="login-form__error" v-if="password === '' "> Enter password </span>
+
+         
       </label>
       <button class="login-form__btn" @click="authorization()">LOGIN</button>
       <div>
@@ -44,11 +49,11 @@ export default {
         this.password === this.registeredUsers.password &&
         this.username === this.registeredUsers.user
       ) {
-        this.$router.push("Todo");
+        this.$router.push("Todo").then(() => window.scrollTo(0, 0));
         localStorage.isAuthorized = true;
         localStorage.username = this.username;
       }
-      this.$router.push("Todo");
+      this.$router.push("Todo").then(() => window.scrollTo(0, 0));
     },
   },
 };
@@ -68,7 +73,7 @@ export default {
   box-shadow: 4px 4px 7px rgba(0, 0, 0, 0.25);
   background: white;
 
-  &__label {
+  &__label-text {
     display: block;
     text-align: left;
     margin-bottom: 7px;
@@ -130,6 +135,21 @@ export default {
     color: var(--color_HF);
     padding-bottom: 17px;
     padding-top: 17px;
+  }
+  &__error{
+      position: absolute;
+      left: 0;
+      bottom: 10px;
+      padding-left: 19px;
+      color: var(--color_error);
+  }
+    &__error::before{
+        content: url("../assets/img//errorX.svg");
+        position: absolute;
+        left: 1px;
+    }
+  &__label{
+      position: relative;
   }
 }
 @media (max-width: 574px) {

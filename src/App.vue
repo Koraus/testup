@@ -1,30 +1,17 @@
 <template>
   <div id="app">
-    <header class="header"> 
-      
-    <!-- <div id="nav">
-      <router-link to="/login">Login</router-link> |
-      <router-link to="/todo">Todo</router-link>
-    </div> -->
     <router-view />
-
-    </header>
-    <footer class="footer"> 
-    </footer> 
-
-
   </div>
 </template>
 
 <style lang="scss">
 
-@import './assets/styles/_variables.css';
 @import './assets/styles/layoutFields.css';
+@import './assets/styles/_variables.css';
 
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&display=swap');
-// font-family: 'Montserrat', sans-serif;
-// font-family: 'Roboto', sans-serif;
+
 body {
     margin: 0px;
     padding: 0px;
