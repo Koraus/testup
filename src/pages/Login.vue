@@ -166,9 +166,28 @@ export default {
     }
 }
 @media (max-width: 478px) {
-  .login__top {
-    padding-top: 370px;
-  }
+  .login {
+        &__top{
+            padding-top: 300px;
+        }
+        &__bottom{
+            margin-top: -280px;
+            padding: 20px;
+        }
+        &__title{
+            margin-bottom: 70px;
+            font-size: 40px;
+        }
+        &__bottom-left{
+            width: 100%;
+        }
+        &__paragraph{
+             width: 100%;
+        }
+        &__list{
+          padding-left: 10px;
+        }
+    }
 }
 }
 </style>
