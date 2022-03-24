@@ -1,8 +1,8 @@
 <template>
   <div class="todolist"> 
-    <div v-if="isAuthorized === undefined" class="not-authorized-text"><p>You are not authorized. Use the authorization link:</p>  <router-link :to="{ name: 'Login', hash:'#loginForm' }" > Login </router-link>  </div>
+    <div v-if="isAuthorized === undefined" class="not-authorized-text"><p> You are not authorized. Use the authorization link:</p>  <router-link :to="{ name: 'Login', hash:'#loginForm' }" > Login </router-link>  </div>
 
-    <div v-if="isAuthorized === 'true'" >
+    <div v-if="isAuthorized === 'true'" class="todolist_bg" >
       <div class="todolist__top">
         <img class="todolist__logo" src="../assets/img/logo-todo.svg" alt="" />
         <div class="todolist__list-area">
@@ -95,9 +95,12 @@ export default {
      font-family: "Roboto", sans-serif;
     font-weight: 400;
 }
+.todolist_bg{
+  height: 100%;
+}
+
 .todolist {
     width: 100%;
-
 
   &__top {
     min-height: 800px;

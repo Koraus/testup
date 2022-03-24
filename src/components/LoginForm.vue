@@ -1,10 +1,11 @@
 <template>
   <div id="loginForm">
     <div class="login-form">
-      <label for="name" class="login-form__label">
-        <span class="login-form__label-text"> Name </span>
-        <input class="login-form__input" type="text" v-model="username" />
-        <span class="login-form__error" v-if="username === '' " > Enter name </span>
+      <label for="name" class="login-form__label" >
+        <span class="login-form__label-text"
+        > Name </span>
+        <input class="login-form__input" type="text"  placeholder="Enter you name"  v-model="username" />
+        <span class="login-form__error" v-if="login" > incorrect name or password </span>
       </label>
       <label for="password" class="login-form__label">
         <span class="login-form__label-text" > Password</span>
@@ -16,7 +17,7 @@
           @keydown.enter="authorization()"
           
         />
-         <span class="login-form__error" v-if="password === '' "> Enter password </span>
+         <span class="login-form__error" v-if="login"> incorrect name or password </span>
 
          
       </label>
@@ -35,9 +36,10 @@ export default {
 
   data() {
     return {
+      login: false,
       password: "",
       username: "",
-      registeredUsers: { user: "admin", password: "12345" },
+      registeredUsers: { user: "Admin", password: "12345" },
     };
   },
   props: {},
@@ -45,6 +47,7 @@ export default {
 
   methods: {
     authorization() {
+      this.login = true;
       if (
         this.password === this.registeredUsers.password &&
         this.username === this.registeredUsers.user
@@ -53,7 +56,7 @@ export default {
         localStorage.isAuthorized = true;
         localStorage.username = this.username;
       }
-      this.$router.push("Todo").then(() => window.scrollTo(0, 0));
+      // this.$router.push("Todo").then(() => window.scrollTo(0, 0));
     },
   },
 };
@@ -106,6 +109,7 @@ export default {
     font-weight: 400;
     font-size: 25px;
     margin-bottom: 20px;
+    cursor: pointer;
   }
   &__btn:hover {
     background: var(--color_white_text);
@@ -135,7 +139,9 @@ export default {
     color: var(--color_HF);
     padding-bottom: 17px;
     padding-top: 17px;
+    cursor: pointer;
   }
+
   &__error{
       position: absolute;
       left: 0;

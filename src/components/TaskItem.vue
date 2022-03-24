@@ -121,6 +121,7 @@ input[type="checkbox"]:checked ~ textarea {
   color: var(--color_white_text);
   border: none;
   min-width: 25px;
+  cursor: pointer;
 }
 
 .btn:hover {
@@ -150,12 +151,14 @@ hr {
   position: absolute;
   z-index: -1;
   opacity: 0;
+ 
 }
 .spn-replace-checkbox {
   padding-right: 25px;
   padding-top: 25px;
   display: inline-block;
   box-sizing: border-box;
+     cursor: pointer;
 }
 .task__text-lable input[type="checkbox"] + .spn-replace-checkbox {
   left: 0px;
